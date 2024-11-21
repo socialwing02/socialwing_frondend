@@ -93,7 +93,7 @@
   width: 500px;
   /* height: 400px; */
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .slideImgContainer {
@@ -138,18 +138,20 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  display: grid;
+  justify-content: center;
 }
 
 .cardWrapper {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 0.5rem;
   margin-top: 1rem;
 }
 
 .counterWrapper {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .counter {
@@ -157,15 +159,18 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 2rem;
 }
 .counter span:nth-child(1) {
   font-size: clamp(1rem, 2vw, 4rem);
   font-weight: 500;
+  white-space: nowrap;
 }
 .counter span:nth-child(2) {
   font-size: clamp(1.5rem, 1.4vw, 4rem);
   font-weight: 400;
   color: rgb(152, 148, 148);
+  white-space: nowrap;
 }
 .digitalWrapper {
   display: grid;
@@ -179,6 +184,54 @@
   background-color: yellow;
   width: 100%;
   height: 100vh;
+  transform-origin: top;
+  overflow: hidden;
+}
+
+.hamburgLinks {
+  list-style: none;
+}
+.hamburgLinks a {
+  text-decoration: none;
+  font-size: clamp(1.5rem, 1vw, 3rem);
+  cursor: pointer;
+  &:hover {
+    transition: all 0.2s ease;
+    text-decoration: underline;
+  }
+}
+
+.hamburgTitle {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.hamburgLinksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin-block: auto;
+  overflow: hidden;
+  padding-bottom: 4rem;
+}
+
+.sliderArrow {
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  padding-block: 1rem;
+}
+
+@media (max-width: 450px) {
+  .counterWrapper {
+    display: block;
+  }
 }
 
 @media (max-width: 700px) {
@@ -199,5 +252,9 @@
 @media (max-width: 1060px) {
   .cardWrapper {
     flex-wrap: wrap;
+  }
+  .counterWrapper {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
   }
 }

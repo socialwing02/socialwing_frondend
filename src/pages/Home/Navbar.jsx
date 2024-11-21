@@ -4,11 +4,11 @@ import classes from "../../styles/css/navbar.module.css";
 import logo from "../../../public/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import HamburgMenu from "../Navbar/HamburgMenu";
+import { navLinks } from "../../data";
+import { AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  console.log(isOpen);
 
   function handleClick() {
     setIsOpen(true);
@@ -23,74 +23,30 @@ export default function Navbar() {
 
         <div className={classes.navList}>
           <ul>
-            <li>
-              <NavLink
-                end
-                to="/"
-                style={({ isActive }) =>
-                  isActive
-                    ? { textDecoration: "underline", color: "#7461d6" }
-                    : undefined
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="services"
-                style={({ isActive }) =>
-                  isActive
-                    ? { textDecoration: "underline", color: "#7461d6" }
-                    : undefined
-                }
-              >
-                Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="about"
-                style={({ isActive }) =>
-                  isActive
-                    ? { textDecoration: "underline", color: "#7461d6" }
-                    : undefined
-                }
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="blog"
-                style={({ isActive }) =>
-                  isActive
-                    ? { textDecoration: "underline", color: "#7461d6" }
-                    : undefined
-                }
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="contact"
-                style={({ isActive }) =>
-                  isActive
-                    ? { textDecoration: "underline", color: "#7461d6" }
-                    : undefined
-                }
-              >
-                Contact Us
-              </NavLink>
-            </li>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <NavLink
+                  end
+                  to={link.path}
+                  style={({ isActive }) =>
+                    isActive
+                      ? { textDecoration: "underline", color: "#7461d6" }
+                      : undefined
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className={classes.menuIcon} onClick={handleClick}>
           <MenuIcon fontSize="large" />
         </div>
-        {isOpen && <HamburgMenu onOpen={setIsOpen} />}
+        <AnimatePresence>
+          {isOpen && <HamburgMenu onOpen={setIsOpen} />}
+        </AnimatePresence>
       </nav>
     </>
   );

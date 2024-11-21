@@ -21,7 +21,7 @@ export default function DigitalMarketing() {
           <img src={videoFIle} className={classes.imgGif} />
         </div>
       </div>
-      {/* <CounterWrapper /> */}
+      <CounterWrapper />
     </section>
   );
 }

@@ -1,51 +1,59 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import classes from "../styles/css/home.module.css";
-import { animate, useMotionValue, motion } from "framer-motion";
-import useMeasure from "react-use-measure";
 import CardSlider from "../components/CardSlider.jsx";
+import { IMAGES } from "../data/index.js";
+import ArrowBackIosNewSharpIcon from "@mui/icons-material/ArrowBackIosNewSharp";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 
 export default function ImageSlider() {
-  const images = [
-    "img/banner.png",
-    "img/capabilities.png",
-    "img/banner.png",
-    "img/capabilities.png",
-    "img/banner.png",
-    "img/capabilities.png",
-    "img/banner.png",
-    "img/capabilities.png",
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 4; // Number of images visible at a time
+  const totalImages = IMAGES.length;
 
-  const repeated = [...images, ...images];
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + itemsPerPage < totalImages ? prevIndex + itemsPerPage : 0
+    );
+  };
 
-  const [ref, { width }] = useMeasure();
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - itemsPerPage >= 0
+        ? prevIndex - itemsPerPage
+        : totalImages - itemsPerPage
+    );
+  };
 
-  const xTranslation = useMotionValue(0);
-
-  useEffect(() => {
-    let controls;
-    let finalPosition = -width / 2 - 16;
-
-    controls = animate(xTranslation, [0, finalPosition], {
-      ease: "linear",
-      duration: 20,
-      repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 0,
-    });
-    return () => controls.stop;
-  }, [xTranslation, width]);
   return (
     <div className={classes.slideWrapper}>
-      <motion.div
-        className={classes.slideImgContainer}
-        ref={ref}
-        style={{ x: xTranslation }}
+      {/* Left Arrow */}
+      <span
+        className={classes.sliderArrow}
+        style={{ marginLeft: "2rem", cursor: "pointer" }}
+        onClick={handlePrev}
       >
-        {repeated.map((image, index) => (
-          <CardSlider img={image} key={index} />
-        ))}
-      </motion.div>
+        <ArrowBackIosNewSharpIcon />
+      </span>
+
+      {/* Image Container */}
+      <div className={classes.slideViewport}>
+        <div className={classes.slideImgContainer}>
+          {IMAGES.slice(currentIndex, currentIndex + itemsPerPage).map(
+            (image, index) => (
+              <CardSlider img={image} key={index} />
+            )
+          )}
+        </div>
+      </div>
+
+      {/* Right Arrow */}
+      <span
+        className={classes.sliderArrow}
+        style={{ marginRight: "2rem", cursor: "pointer" }}
+        onClick={handleNext}
+      >
+        <ArrowForwardIosSharpIcon />
+      </span>
     </div>
   );
 }
