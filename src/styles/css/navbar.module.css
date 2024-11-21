@@ -1,0 +1,116 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2.45rem;
+}
+.navList > ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.navList > ul a {
+  text-decoration: none;
+  color: black;
+  padding-inline: 5px;
+  padding-block: 4px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.navlink {
+  text-decoration: underline;
+}
+
+.navList > ul a {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navList > ul a:hover,
+a:active {
+  color: #fff;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px #958dba, 0 0 18px #aba2dc, 0 0 24px #a397dd;
+}
+
+.parallelText {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  opacity: 0.6;
+  padding-block: 0.5rem;
+}
+.parallelText > .motionDiv {
+  display: flex;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+.textContainer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+.gradientText {
+  font-size: 1.2rem;
+  padding-inline: 2rem;
+  font-weight: bold;
+  text-align: center;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.navbar {
+  background-color: #7461d6;
+  overflow: hidden;
+  padding: 0.7rem;
+  white-space: nowrap;
+}
+.slide {
+  display: inline-block;
+  animation: 6s slide infinite linear;
+}
+.slide span {
+  padding-inline: 2rem;
+  color: #fff;
+}
+
+.menuIcon {
+  display: none;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 960px) {
+  .navList {
+    display: none;
+  }
+  .menuIcon {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 700px) {
+  .navContainer {
+    padding-inline: 1.8rem;
+  }
+}
