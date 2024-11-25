@@ -5,7 +5,8 @@ import logo from "../../../public/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import HamburgMenu from "../Navbar/HamburgMenu";
 import { navLinks } from "../../data";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { fadeIn } from "../../utils/variant";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,14 +18,28 @@ export default function Navbar() {
   return (
     <>
       <nav className={classes.navContainer}>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <img src={logo} alt="" className={classes.logo} />
+        <div>
+          <img src={logo} alt="" className={classes.logo} autoPlay loop />
         </div>
 
         <div className={classes.navList}>
-          <ul>
+          <motion.ul
+            variants={{
+              hidden: { opacity: 0, transition: { staggerChildren: 0.2 } },
+              show: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+            initial="hidden"
+            whileInView="show"
+          >
             {navLinks.map((link, index) => (
-              <li key={index}>
+              <motion.li
+                key={index}
+                transition={{ type: "spring" }}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.5 },
+                  show: { opacity: 1, scale: 1 },
+                }}
+              >
                 <NavLink
                   end
                   to={link.path}
@@ -36,9 +51,9 @@ export default function Navbar() {
                 >
                   {link.name}
                 </NavLink>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
 
         <div className={classes.menuIcon} onClick={handleClick}>

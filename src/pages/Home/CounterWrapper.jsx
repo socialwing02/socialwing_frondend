@@ -1,10 +1,17 @@
 import React from "react";
 import Counter from "../../motion/Counter";
 import classes from "../../styles/css/home.module.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/variant";
 
 export default function CounterWrapper() {
   return (
-    <div className={classes.counterWrapper}>
+    <motion.div
+      className={classes.counterWrapper}
+      variants={fadeIn("down", 0.5)}
+      whileInView="show"
+      initial="hidden"
+    >
       <div className={classes.counter}>
         <span>
           <Counter value={4} />
@@ -23,12 +30,6 @@ export default function CounterWrapper() {
         </span>
         <span>Logos & Designs</span>
       </div>
-      <div className={classes.counter}>
-        <span>
-          <Counter value={10} />+
-        </span>
-        <span>SEO</span>
-      </div>
-    </div>
+    </motion.div>
   );
 }

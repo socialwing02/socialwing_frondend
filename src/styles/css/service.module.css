@@ -1,0 +1,95 @@
+.serviceContainer {
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  background: linear-gradient(to left, #ffffff, #f0ebf6);
+  display: grid;
+  place-content: center;
+  font-size: clamp(2rem, 2.5vw, 5rem);
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  border: 1px solid black;
+  height: 100vh;
+}
+.sliderWrapper {
+  display: flex;
+  height: 100vh;
+  width: max-content;
+}
+
+.imageContainer {
+  flex: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer img {
+  max-width: 40%;
+  max-height: 40%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.imageContainer p {
+  width: 60ch;
+}
+.section {
+  min-height: 100%;
+}
+.sectionContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+.sectionContainer img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 9px;
+  position: relative;
+}
+.sectionContainer p {
+  width: 50ch;
+}
+
+.serviceAnimate {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.serviceAnimate .boy {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+.animateIcons1,
+.animateIcons2,
+.animateIcons3 {
+  display: flex;
+  gap: 2rem;
+}
+.animateIcon1:has(img:nth-child(1), img:nth-child(3), img:nth-child(2)) img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.allIcons {
+  display: flex;
+  flex-direction: column;
+  margin-top: -2rem;
+}
+
+.animateIcons1 {
+  rotate: 20deg;
+}

@@ -1,14 +1,20 @@
 import React from "react";
-import Navbar from "./Home/Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import NavSlider from "./Navbar/NavSlider";
+import Footer from "../components/Footer/Footer";
+import Navbar from "./Home/Navbar";
+import TransitionProvider from "../context/TransitionProvider";
 
 export default function Layout() {
+  const location = useLocation();
   return (
     <>
-      <NavSlider />
-      <Navbar />
-      <Outlet />
+      <TransitionProvider>
+        {/* {location.pathname == "/" && <NavSlider />} */}
+        {location.pathname !== "/" && <Navbar />}
+        <Outlet />
+        <Footer />
+      </TransitionProvider>
     </>
   );
 }

@@ -83,14 +83,16 @@ const navVars = {
 
 const containerVars = {
   initial: {
+    opacity: 0,
     transition: {
-      staggerChildren: 0.09,
+      staggerChildren: 0.05,
       staggerDirection: -1,
     },
   },
   animate: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.09,
+      staggerChildren: 0.05,
       delayChildren: 0.3,
       staggerDirection: 1,
     },
