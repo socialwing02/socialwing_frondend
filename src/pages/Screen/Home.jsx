@@ -20,7 +20,7 @@ export default function Home() {
       {/* <Cards /> */}
       {/* <Services /> */}
       {/* <Details /> */}
-      {/* <ImageSlider /> */}
+      <ImageSlider />
     </motion.main>
   );
 }

@@ -6,10 +6,10 @@ export const navLinks = [
   { name: "Blog", path: "blog" },
 ];
 export const IMAGES = [
-  "img/banner.png",
-  "img/image1.jpg",
-  "img/image2.jpg",
-  "img/image3.jpg",
+  "img/digital.jpg",
+  "img/ads.jpg",
+  "img/web-development.jpg",
+  "img/logo-design.jpg",
   "img/banner.png",
 ];
 

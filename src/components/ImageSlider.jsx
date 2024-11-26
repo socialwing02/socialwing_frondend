@@ -2,50 +2,39 @@ import React, { useState, useEffect } from "react";
 import classes from "../styles/css/home.module.css";
 import Image from "./Image.jsx";
 import { IMAGES } from "../data/index.js";
-import ArrowBackIosNewSharpIcon from "@mui/icons-material/ArrowBackIosNewSharp";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import { animate, motion, useMotionValue } from "framer-motion";
+import useMeasure from "react-use-measure";
 
 export default function ImageSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = 4;
-  const totalImages = IMAGES.length;
+  const repeated = [...IMAGES, ...IMAGES];
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
-  };
+  const [ref, { width }] = useMeasure();
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
-  };
+  const xTranslation = useMotionValue(0);
 
   useEffect(() => {
-    const autoSlide = setInterval(() => {
-      handlePrev();
-    }, 3000);
+    let controls;
+    let finalPosition = -width / 2 - 16;
 
-    return () => clearInterval(autoSlide);
-  }, []);
-
-  const imagesToDisplay = [
-    ...IMAGES.slice(currentIndex, currentIndex + itemsPerPage),
-    ...IMAGES.slice(0, Math.max(0, currentIndex + itemsPerPage - totalImages)),
-  ];
+    controls = animate(xTranslation, [0, finalPosition], {
+      ease: "linear",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "loop",
+      repeatDelay: 0,
+    });
+    return () => controls.stop;
+  }, [xTranslation, width]);
 
   return (
-    <div className={classes.slideWrapper}>
-      <div className={classes.slideViewport}>
-        <div className={classes.slideImgContainer}>
-          <span onClick={handleNext} className={classes.leftArrow}>
-            <ArrowBackIosNewSharpIcon />
-          </span>
-          {imagesToDisplay.map((image, index) => (
-            <Image img={image} key={index} />
-          ))}
-          <span onClick={handlePrev} className={classes.rightArrow}>
-            <ArrowForwardIosSharpIcon />
-          </span>
-        </div>
-      </div>
-    </div>
+    <motion.div
+      className={classes.slideImgContainer}
+      ref={ref}
+      style={{ x: xTranslation }}
+    >
+      {repeated.map((image, index) => (
+        <Image img={image} key={index} />
+      ))}
+    </motion.div>
   );
 }
