@@ -6,6 +6,7 @@ import Details from "../../components/Details/Details";
 import { motion } from "framer-motion";
 import Services from "./Services";
 import Portfolio from "../../components/Portfolio";
+// import Stars from "../Home/Stars";
 
 export default function Home() {
   return (
@@ -15,12 +16,14 @@ export default function Home() {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
+      {/* <Stars /> */}
       <DigitalMarketing />
       <Portfolio />
       {/* <Cards /> */}
       {/* <Services /> */}
       {/* <Details /> */}
-      <ImageSlider />
+      <ImageSlider reverse={false} />
+      <ImageSlider reverse={false} />
     </motion.main>
   );
 }

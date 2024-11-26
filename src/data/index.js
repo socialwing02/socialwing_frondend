@@ -11,6 +11,7 @@ export const IMAGES = [
   "img/web-development.jpg",
   "img/logo-design.jpg",
   "img/banner.png",
+  "img/digital.jpg",
 ];
 
 export const portfolioData = [

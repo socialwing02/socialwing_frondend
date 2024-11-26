@@ -152,12 +152,17 @@
   height: 600px;
   object-fit: cover;
 }
-
+.imageSlider {
+  position: relative;
+}
 .slideImgContainer {
+  /* overflow: hidden; */
+  padding-block: 2rem;
   display: flex;
   gap: 1rem;
-  /* margin-block: 5rem; */
-  position: relative;
+  position: absolute;
+  left: 0;
+  background-color: rgb(24 24 27);
 }
 .sliderImg {
   position: relative;
@@ -190,14 +195,6 @@
   pointer-events: none;
   height: 100%;
   width: 100%;
-}
-
-.slideWrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  display: grid;
-  justify-content: center;
 }
 
 .cardWrapper {
@@ -450,7 +447,7 @@
 }
 
 .portfolio {
-  background-color: black;
+  background-color: rgb(24 24 27);
   color: white;
   position: relative;
   z-index: 999;
@@ -528,16 +525,18 @@
 
 .logo {
   position: absolute;
-  top: 0;
+  left: 20px;
+  top: 20px;
   /* border: 1px solid white; */
   height: 200px;
-  width: 200px;
+  width: 250px;
   z-index: 99;
 }
 .navbar {
   position: absolute;
   top: 0;
   right: 120px;
+  z-index: 99;
 }
 .navbar ul {
   list-style: none;
@@ -553,4 +552,10 @@
 .navbar ul li a:hover {
   transition: all 0.4s ease;
   scale: 1.3;
+}
+
+.starsContainer {
+  height: 100vh;
+  inset: 0;
+  background-color: #000000;
 }

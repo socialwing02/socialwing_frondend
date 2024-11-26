@@ -12,6 +12,7 @@ import heroImage from "/img/hero-image.png";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import { div } from "framer-motion/client";
+import StarsCanvas from "./Stars";
 export default function DigitalMarketing() {
   const ref = useRef();
 
@@ -37,12 +38,11 @@ export default function DigitalMarketing() {
 
   return (
     <div className={classes.heroVideo}>
-      {/* <Navbar /> */}
       <video
-        src="video/hero-video3.MP4"
-        loop
+        src="video/logo-video4.webm"
         autoPlay
-        className={classes.hero}
+        loop
+        className={classes.logo}
       />
       <div className={classes.navbar}>
         <ul>
@@ -63,12 +63,8 @@ export default function DigitalMarketing() {
           </li>
         </ul>
       </div>
-      {/* <video
-        src="video/logo-video2.mp4"
-        loop
-        autoPlay
-        className={classes.logo}
-      /> */}
+
+      <StarsCanvas />
     </div>
 
     // <AnimatePresence>

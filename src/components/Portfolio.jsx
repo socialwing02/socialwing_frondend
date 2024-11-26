@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import Card from "./Card";
 import useMousePosition from "../hooks/useMousePosition";
+import ImageSlider from "./ImageSlider";
 
 export default function Portfolio() {
   const ref = useRef();
@@ -58,7 +59,7 @@ function Section({ item }) {
 
   const y = useTransform(scrollYProgress, [0, 1], [-150, 150]);
 
-  const isInView = useInView(contentRef, { margin: "-200px 0px -100px 0px" });
+  const isInView = useInView(contentRef, { margin: "0px 0px 0px 0px" });
   const isImageInView = useInView(imgRef, { margin: "200px 0px 200px 0px" });
 
   return (
