@@ -31,13 +31,13 @@ export default function Portfolio() {
   return (
     <div className={classes.portfolio} ref={ref}>
       <motion.div className={classes.cursor}>
-        <div className={classes.portfolioHeader}>
+        {/* <div className={classes.portfolioHeader}>
           <h2>Services</h2>
           <motion.div
             className={classes.progressBar}
             style={{ scaleX }}
           ></motion.div>
-        </div>
+        </div> */}
 
         {portfolioData.map((item) => (
           <Section key={item.id} item={item} />

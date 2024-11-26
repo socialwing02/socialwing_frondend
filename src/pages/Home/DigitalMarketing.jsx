@@ -39,7 +39,7 @@ export default function DigitalMarketing() {
   return (
     <div className={classes.heroVideo}>
       <video
-        src="video/logo-video4.webm"
+        src="video/logo-video6.webm"
         autoPlay
         loop
         className={classes.logo}
