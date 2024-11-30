@@ -403,7 +403,6 @@
   height: 100vh;
 }
 .mask {
-  mask-image: url("../../public/mask.svg");
   mask-repeat: no-repeat;
   mask-size: 40px;
   background: #ec4e39;
@@ -906,7 +905,7 @@ svg:nth-child(2) {
   position: relative;
 }
 .earthContainer {
-  min-height: 100vh;
+  min-height: 150vh;
   position: relative;
 }
 
@@ -921,4 +920,37 @@ svg:nth-child(2) {
   width: 100%;
   top: 0;
   color: white;
+}
+.titles {
+  width: 100%;
+  border-top: 1px solid grey;
+}
+.title {
+  padding-left: 7rem;
+  position: relative;
+  border-bottom: 1px solid rgba(183, 171, 152, 0.25);
+}
+
+.titleWrapper {
+  display: inline-block;
+}
+
+.title p {
+  font-weight: 700;
+  font-size: 8vw;
+  line-height: 7.5vw;
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0;
+  z-index: 2;
+  color: #b7ab98;
+
+  &:nth-child(2) {
+    display: block;
+    position: absolute;
+    color: #1c1c1c;
+    top: 0;
+    z-index: 1;
+  }
 }
