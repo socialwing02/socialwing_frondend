@@ -1,29 +1,27 @@
-import React from "react";
-import DigitalMarketing from "../Home/DigitalMarketing";
-import Cards from "../Home/Cards";
+import React, { lazy, Suspense } from "react";
 import ImageSlider from "../../components/ImageSlider";
-import Details from "../../components/Details/Details";
 import { motion } from "framer-motion";
-import Services from "./Services";
-import Portfolio from "../../components/Portfolio";
-// import Stars from "../Home/Stars";
+import HomeService from "../../components/HomeService";
+import TextAnimation from "../Home/TextAnimation";
+import HomeContact from "../Home/HomeContact";
+import HomeHero from "../Home/HomeHero";
+import EarthAnimation from "../Home/Earth/EarthAnimation";
 
 export default function Home() {
   return (
     <motion.main
-      style={{ height: "100%" }}
+      style={{ backgroundColor: "#000" }}
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      {/* <Stars /> */}
-      <DigitalMarketing />
-      <Portfolio />
-      {/* <Cards /> */}
-      {/* <Services /> */}
-      {/* <Details /> */}
-      <ImageSlider reverse={false} />
-      <ImageSlider reverse={false} />
+      <HomeHero />
+      <EarthAnimation />
+      <TextAnimation />
+      <HomeService />
+      <ImageSlider animateClassName="enableAnimation" />
+      <ImageSlider animateClassName="enableAnimationReverse" />
+      <HomeContact />
     </motion.main>
   );
 }

@@ -1,24 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import classes from "../styles/css/home.module.css";
 
 export default function TransitionProvider({ children }) {
   const location = useLocation();
 
-  const pathName = location.pathname;
-
-  let path = pathName;
-
-  if (pathName === "/") {
-    path = "";
-  } else {
-    path = pathName.substring(1);
-  }
+  const path = location.pathname === "/" ? "" : location.pathname.substring(1);
 
   return (
     <AnimatePresence mode="wait">
-      <div key={location.pathname}>
+      <motion.div key={location.key}>
+        {/* First screen transition */}
         <motion.div
           initial={{ height: "140vh" }}
           animate={{ height: "0vh" }}
@@ -27,14 +20,18 @@ export default function TransitionProvider({ children }) {
           className={classes.navFirstScreen}
         />
 
+        {/* Text and logo animation */}
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ ease: "easeOut", duration: pathName === "/" ? 2 : 0.5 }}
+          exit={{ opacity: 0, display: "none" }}
+          transition={{
+            ease: "easeOut",
+            duration: location.pathname === "/" ? 2 : 0.5,
+          }}
           className={classes.navTextScreen}
         >
-          {pathName === "/" && (
+          {location.pathname === "/" && (
             <motion.img
               src="logo.png"
               className={classes.homeImg}
@@ -43,23 +40,25 @@ export default function TransitionProvider({ children }) {
               exit={{ opacity: 0, position: "relative" }}
               transition={{
                 ease: "easeOut",
-                duration: pathName === "/" ? 1 : 0.5,
+                duration: 1,
               }}
             />
           )}
           {path}
         </motion.div>
 
+        {/* Second screen transition */}
         <motion.div
           initial={{ height: "140vh" }}
           animate={{
             height: "0vh",
-            transition: { delay: pathName === "/" ? 1 : 0.5 },
+            transition: { delay: location.pathname === "/" ? 1 : 0.5 },
           }}
           className={classes.navSecondScreen}
         />
-      </div>
+      </motion.div>
 
+      {/* Render children with animation */}
       {children}
     </AnimatePresence>
   );

@@ -3,8 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding-inline: 2.45rem;
-  background-color: #000;
-  color: #fff;
 }
 .navList > ul {
   color: #fff;
@@ -27,7 +25,7 @@
 }
 
 .navList > ul a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   display: inline-block;
   transition: transform 0.2s ease, color 0.3s ease, text-shadow 0.3s ease;
@@ -72,8 +70,8 @@ a:active {
   white-space: nowrap;
 }
 .logo {
-  width: 150px;
-  height: 200px;
+  width: 100px;
+  height: 150px;
   object-fit: contain;
 }
 .navbar {

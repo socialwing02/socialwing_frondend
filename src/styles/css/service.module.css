@@ -3,8 +3,8 @@
   min-height: calc(100vh - 4rem);
   background: linear-gradient(to left, #ffffff, #f0ebf6);
   display: grid;
-  place-content: center;
-  font-size: clamp(2rem, 2.5vw, 5rem);
+  place-items: center;
+  font-size: clamp(2rem, 2.5vw, 3rem);
 }
 
 .stickyContainer {
@@ -38,58 +38,67 @@
   border-radius: 12px;
 }
 .imageContainer p {
-  width: 60ch;
+  width: min(90vw, 55ch);
 }
 .section {
   min-height: 100%;
 }
 .sectionContainer {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
   gap: 4rem;
+  padding-inline: 1rem;
 }
 
 .sectionContainer img {
   width: 400px;
-  height: 400px;
+  aspect-ratio: 4/4;
   object-fit: cover;
   border-radius: 9px;
   position: relative;
 }
 .sectionContainer p {
-  width: 50ch;
+  width: min(90vw, 55ch);
 }
 
 .serviceAnimate {
   display: flex;
   justify-content: end;
-  align-items: center;
+  /* align-items: center; */
+  margin-top: 4rem;
 }
 .serviceAnimate .boy {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   object-fit: contain;
 }
-.animateIcons1,
-.animateIcons2,
-.animateIcons3 {
+.animateIcons {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: -4rem;
 }
-.animateIcon1:has(img:nth-child(1), img:nth-child(3), img:nth-child(2)) img {
+.animateIcons img {
   width: 250px;
   height: 250px;
   object-fit: cover;
 }
-.allIcons {
-  display: flex;
-  flex-direction: column;
-  margin-top: -2rem;
+
+.reverse {
+  flex-direction: row-reverse;
+}
+.row {
+  flex-direction: row;
 }
 
-.animateIcons1 {
-  rotate: 20deg;
+@media (max-width: 1090px) {
+  .reverse {
+    flex-direction: column;
+  }
+  .row {
+    flex-direction: column;
+  }
 }

@@ -21,7 +21,6 @@ export default function Footer() {
     <footer className="footer">
       <QuickLinks />
       <OurProgram />
-
       <div className="footerContact">
         <div>
           <h2>Social Media</h2>
@@ -43,6 +42,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {/* &copy; */}
     </footer>
   );
 }

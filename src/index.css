@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -6,9 +8,8 @@
   font-weight: 400;
   font-style: normal;
 }
-
-html {
-  overflow-x: hidden;
+body {
+  /* cursor: url("/mask-small.svg"), auto; */
 }
 
 img,
@@ -19,13 +20,13 @@ video {
 
 .footer {
   max-width: 100%;
-  min-height: 50vh;
+  min-height: 40vh;
   background-color: #2e2e2e;
   color: #ffffff;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   gap: 2rem;
-  cursor: url("cursor.jpeg") auto;
 }
 .footerLinks,
 .footerProgram,
@@ -34,7 +35,7 @@ video {
   flex-direction: column;
   justify-content: flex-start;
   row-gap: 0.4rem;
-  padding-top: 3rem;
+  padding-top: 2rem;
   align-items: center;
 }
 .footerLinks h2,
@@ -76,7 +77,18 @@ video {
   width: 300px;
   font-size: 1rem;
   border-radius: 9px;
-  /* outline: none; */
+  outline: 2px solid gray;
   padding: 6px;
   border: 1px dotted gray;
+}
+input:user-valid {
+  outline: 2px solid green;
+}
+input:user-invalid {
+  outline: 2px solid red;
+}
+@media (max-width: 900px) {
+  .footer {
+    display: block;
+  }
 }

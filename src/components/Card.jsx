@@ -1,8 +1,9 @@
 import React from "react";
 import classes from "../styles/css/home.module.css";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 
-export default function Card({ img, alt, phoneNumber, title }) {
+export default function Card({ img, alt, title }) {
   const whatsappLink = `https://wa.me/9789647901`;
 
   function handleClick() {
@@ -26,11 +27,11 @@ export default function Card({ img, alt, phoneNumber, title }) {
         },
       }}
     >
-      <img src={img} alt={alt} />
+      <img src={img} alt={alt} loading="lazy" />
       <div className={classes.cardContents}>
         <h2>{title}</h2>
         {/* <p>Some content</p> */}
-        <span onClick={handleClick}>View More</span>
+        <Link to="services">View More</Link>
       </div>
     </motion.div>
   );

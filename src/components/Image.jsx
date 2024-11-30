@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "../styles/css/home.module.css";
 import { motion } from "framer-motion";
 
-export default function CardSlider({ img }) {
+export default function Image({ img }) {
   const [overlay, setOverlay] = useState(false);
 
   return (

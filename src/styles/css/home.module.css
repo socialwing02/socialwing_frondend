@@ -42,6 +42,15 @@
     display: block;
     gap: 2rem;
   }
+  .RowreversePortfolio {
+    flex-direction: column !important;
+  }
+  .row {
+    flex-direction: column !important;
+  }
+  .homeContact {
+    flex-direction: column;
+  }
 }
 
 .digitalContainer {
@@ -160,14 +169,14 @@
   padding-block: 2rem;
   display: flex;
   gap: 1rem;
-  position: absolute;
+  /* position: absolute; */
   left: 0;
-  background-color: rgb(24 24 27);
+  /* background-color: rgb(24 24 27); */
 }
 .sliderImg {
   position: relative;
-  height: 200px;
-  width: 250px;
+  height: 300px;
+  width: 350px;
   display: flex;
   justify-content: center;
   border-radius: 9px;
@@ -409,6 +418,7 @@
   position: fixed;
   background-color: black;
   z-index: 10;
+  overflow: hidden;
 }
 .navFirstScreen {
   position: absolute;
@@ -418,6 +428,8 @@
   left: 0;
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 100px;
+  overflow: hidden;
+
   z-index: 10;
 }
 .navSecondScreen {
@@ -428,6 +440,8 @@
   left: 0;
   border-top-right-radius: 100px;
   border-top-left-radius: 100px;
+  overflow: hidden;
+
   z-index: 10;
 }
 .navTextScreen {
@@ -441,28 +455,28 @@
   font-size: clamp(2rem, 3.5vw, 6rem);
   cursor: default;
   z-index: 50;
-  width: fit-content;
+  width: max-content;
   height: fit-content;
   text-transform: capitalize;
 }
 
 .portfolio {
-  background-color: rgb(24 24 27);
   color: white;
   position: relative;
   z-index: 999;
 }
 
 .portfolioSection {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   gap: 2rem;
+  padding-inline: 1rem;
 }
 .portfolioSection p {
-  width: 50ch;
+  width: min(90vw, 50ch);
 }
 .portfolioSection img {
   width: 400px;
@@ -522,15 +536,20 @@
   position: relative;
   min-height: 100vh;
 }
+.hero {
+  position: sticky;
+  top: 0;
+}
 
 .logo {
   position: absolute;
   left: 20px;
   top: 20px;
-  /* border: 1px solid white; */
-  height: 200px;
-  width: 250px;
+  height: 100px;
+  width: 150px;
   z-index: 99;
+  object-fit: cover;
+  background-color: transparent;
 }
 .navbar {
   position: absolute;
@@ -555,7 +574,351 @@
 }
 
 .starsContainer {
+  width: 100%;
   height: 100vh;
   inset: 0;
   background-color: #000000;
+  overflow: hidden;
+}
+
+/* Marquee styles */
+.marquee {
+  --gap: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  /* border: 2px dashed lightgray; */
+}
+
+.marqueeContent {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+}
+
+.marqueeContent img {
+  max-width: 200px;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.marqueeContent > * {
+  flex: 0 0 auto;
+  color: white;
+  margin: 2px;
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.marqueeItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marquee ul {
+  padding-left: 0;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes scroll-reverse {
+  from {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.enableAnimation .marqueeContent {
+  animation: scroll 15s linear infinite;
+}
+.marquee:hover .marqueeContent {
+  animation-play-state: paused;
+}
+.enableAnimationReverse .marqueeContent {
+  animation: scroll-reverse 15s linear infinite;
+}
+
+.navList a:hover,
+a:active {
+  color: #fff;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px #958dba, 0 0 18px #aba2dc, 0 0 24px #a397dd;
+}
+
+.homeContact {
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  gap: 3rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+.homeContent p {
+  width: min(50ch, 90vw);
+}
+
+.chatIcons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  z-index: 9999;
+}
+.phone {
+  animation: infiniteScale 1s infinite ease-in-out;
+}
+.whatsapp {
+  animation: infiniteScale 1.5s infinite ease;
+}
+
+@keyframes infiniteScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.chatIcons .phone:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.chatIcons .whatsapp:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.chatbot img:hover {
+  transform: scale(1.2);
+}
+.chatBotContainer {
+  max-width: 350px;
+  width: 100%;
+  height: 500px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  z-index: 999999;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+}
+.chatbotHead {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  /* gap: 1.2rem; */
+}
+.chatbotHead svg:nth-child(1),
+svg:nth-child(2) {
+  cursor: pointer;
+}
+.chatContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+.chatbotInputContainer {
+  margin-bottom: 1rem;
+}
+
+.chatbotInputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 1rem;
+  padding-top: 10px;
+}
+.chatbotInputs input {
+  flex: 1;
+  font-size: 1rem;
+  padding: 6px;
+  border-radius: 9px;
+  outline: none;
+  border: 1px solid gray;
+}
+.chatbotChats {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.botTextContainer {
+  width: 100%;
+}
+.botText {
+  width: 30ch;
+  margin-left: 10px;
+  padding: 1rem;
+  border: 1px dotted gray;
+  border-radius: 12px;
+  text-wrap: pretty;
+}
+.customerText {
+  max-width: 30ch;
+  margin-right: 10px;
+  padding: 1rem;
+  border: 1px dotted gray;
+  border-radius: 12px;
+  text-wrap: pretty;
+  background-color: #0071ff;
+  color: white;
+}
+.customerTextContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.chatbot {
+  width: 120px;
+  height: 60px;
+  position: fixed;
+  border-radius: 12px;
+  right: 10px;
+  bottom: 60px;
+  cursor: pointer;
+  z-index: 9999;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.chatbot:hover {
+  width: 350px;
+}
+
+.chatbot img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.chatbot p {
+  white-space: nowrap;
+  font-size: 16px;
+  margin: 0;
+  color: #000;
+}
+.scrollReveal {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  color: white;
+}
+
+.scrollReveal h1 {
+  width: min(90vw, 30ch);
+  text-wrap: pretty;
+}
+.scrollReveal span {
+  color: hsl(0 0% 100% / 0.2);
+  background-image: linear-gradient(
+    90deg,
+    rgb(169, 63, 185),
+    rgb(169, 63, 185)
+  );
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view(y);
+}
+
+.scrollReveal h1 span {
+  animation-range-start: cover 5vh;
+  animation-range-end: contain 25vh;
+}
+
+.RowreversePortfolio {
+  flex-direction: row-reverse;
+}
+.row {
+  flex-direction: row;
+}
+
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+.menuIcon {
+  display: none;
+}
+
+.menuIcon svg {
+  color: white;
+}
+
+@media (max-width: 960px) {
+  .navList {
+    display: none !important;
+  }
+  .menuIcon {
+    display: inline-block;
+  }
+  .navbar {
+    top: 80px;
+    right: 60px;
+  }
+  .chatbot {
+    right: 0;
+  }
+}
+.portfolio {
+  position: relative;
+}
+.earthContainer {
+  min-height: 100vh;
+  position: relative;
+}
+
+.earthContainer img {
+  height: 100%;
+  border: 1px solid red;
+}
+
+.earthTextContainer {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  color: white;
 }

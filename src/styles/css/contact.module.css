@@ -3,13 +3,14 @@
   justify-content: center;
   padding-block: 5rem;
   background: linear-gradient(to left, #ffffff, #f0ebf6);
+  overflow-x: hidden;
 }
 .wrapper {
   display: flex;
   gap: 4rem;
 }
 .content p {
-  width: 50ch;
+  width: min(90vw, 50ch);
 }
 .contactForm {
   max-width: 400px;

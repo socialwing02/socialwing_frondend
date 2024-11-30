@@ -10,9 +10,7 @@ export default function Layout() {
   return (
     <>
       <TransitionProvider>
-        {/* {location.pathname == "/" && <NavSlider />} */}
-        {/* {location.pathname !== "/" && <Navbar />} */}
-        {/* <Navbar /> */}
+        {location.pathname !== "/" && <Navbar />}
         <Outlet />
         <Footer />
       </TransitionProvider>

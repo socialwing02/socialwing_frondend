@@ -1,13 +1,15 @@
 import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Points, PointMaterial, Preload } from "@react-three/drei";
+import { Points, PointMaterial, Preload, Effects } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 import classes from "../../styles/css/home.module.css";
 
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(100000), { radius: 1.2 })
+    random.inSphere(new Float32Array(4000), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {
@@ -20,8 +22,8 @@ const Stars = (props) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="#f272c8"
-          size={0.002}
+          color="#7663d7"
+          size={0.0025}
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -41,19 +43,17 @@ const CameraController = () => {
     mouse.current.y = -(event.clientY / innerHeight - 0.5) * 2;
   };
 
-  // Interpolate camera position for smooth movement
   useFrame(() => {
     targetPosition.current.x +=
-      (mouse.current.x * 0.5 - targetPosition.current.x) * 0.1; // Adjust speed with the factor (0.1)
+      (mouse.current.x * 0.5 - targetPosition.current.x) * 0.1;
     targetPosition.current.y +=
       (mouse.current.y * 0.5 - targetPosition.current.y) * 0.1;
 
     camera.position.x = targetPosition.current.x;
     camera.position.y = targetPosition.current.y;
-    camera.lookAt(0, 0, 0); // Always look at the center
+    camera.lookAt(0, 0, 0);
   });
 
-  // Attach mousemove listener
   document.addEventListener("mousemove", handleMouseMove);
 
   return null;
@@ -65,8 +65,18 @@ const StarsCanvas = () => {
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Stars />
-          <CameraController /> {/* Add camera controller */}
+          <CameraController />
         </Suspense>
+        {/* Add glowing effects */}
+        <EffectComposer>
+          <Bloom
+            intensity={1.5} // Adjust the glow intensity
+            radius={0.5} // Bloom radius
+            luminanceThreshold={0.15} // Controls which brightness values to bloom
+            luminanceSmoothing={0.025} // Smooth transition for brightness
+            blendFunction={BlendFunction.ADD} // Additive blend mode for stronger glow
+          />
+        </EffectComposer>
         <Preload all />
       </Canvas>
     </div>

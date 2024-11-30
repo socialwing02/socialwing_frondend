@@ -1,6 +1,4 @@
-export async function fetchApi(data) {
-  const url = "http://192.168.1.9:5000/api/send_email";
-
+export async function fetchApi(url, data) {
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -9,9 +7,5 @@ export async function fetchApi(data) {
     body: JSON.stringify(data),
   });
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! Status: ${response.status}`);
-  }
-
-  return response.json();
+  return response;
 }

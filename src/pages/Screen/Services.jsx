@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import classes from "../../styles/css/service.module.css";
 import { IMAGES, portfolioData } from "../../data";
+import { fadeIn } from "../../utils/variant";
 
 export default function Services() {
   const ref = useRef();
@@ -12,13 +13,8 @@ export default function Services() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const rotate = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["0deg", "180deg", "360deg"]
-  );
+  const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "360deg"]);
 
-  // Define the x movement for images from right to left
   const x = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
@@ -40,76 +36,21 @@ export default function Services() {
           ref={ref}
           style={{ opacity }}
         >
-          <div className={classes.allIcons}>
-            <motion.div className={classes.animateIcons1}>
-              <motion.img
-                src="img/icons/fac-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/insta-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/x-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/x-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-            </motion.div>
-
-            <motion.div className={classes.animateIcons2}>
-              <motion.img
-                src="img/icons/fac-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/insta-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/x-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/x-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-            </motion.div>
-
-            <motion.div className={classes.animateIcons3}>
-              <motion.img
-                src="img/icons/fac-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/insta-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/x-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-              <motion.img
-                src="img/icons/x-icon.PNG"
-                alt="React"
-                style={{ rotate, x, width: "100px", height: "100px" }}
-              />
-            </motion.div>
-          </div>
+          <motion.div className={classes.animateIcons}>
+            <motion.img
+              src="react.webp"
+              alt="React"
+              style={{ rotate, x }}
+              transition={{ duration: 3 }}
+            />
+            <motion.img
+              src="img/python.png"
+              alt="python"
+              style={{ rotate, x }}
+              transition={{ duration: 3 }}
+              className={classes.python}
+            />
+          </motion.div>
           <img
             src="boy.webp"
             alt="Boy"
@@ -134,16 +75,24 @@ function Section({ item }) {
 
   const y = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
+  const fade = item.reverse ? "left" : "right";
+
   return (
     <div
-      className={classes.sectionContainer}
-      style={{ flexDirection: reverse ? "row" : "row-reverse" }}
+      className={`${classes.sectionContainer} ${
+        item.reverse ? classes.reverse : classes.row
+      }`}
       ref={ref}
     >
-      <div className={classes.content}>
+      <motion.div
+        className={classes.content}
+        variants={fadeIn(fade, 0.3)}
+        initial="hidden"
+        whileInView="show"
+      >
         <h1>{title}</h1>
         <p>{desc}</p>
-      </div>
+      </motion.div>
 
       <div className={classes.serviceSectionImage}>
         <motion.img src={img} alt={title} style={{ y: y }} />
