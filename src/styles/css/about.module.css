@@ -38,7 +38,7 @@
 }
 
 .card {
-  max-width: 450px;
+  max-width: 550px;
   padding-inline: 2rem;
   padding-block: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
@@ -60,7 +60,7 @@
   padding-block: 3rem;
 }
 .whyContent p {
-  width: min(90vw, 50ch);
+  width: min(90vw, 60ch);
   padding-top: 0.8rem;
   text-wrap: pretty;
   font-size: 1.1rem;

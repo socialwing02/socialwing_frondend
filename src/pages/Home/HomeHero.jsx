@@ -15,7 +15,6 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import ChatbotContainer from "./Chatbot";
 import MenuIcon from "@mui/icons-material/Menu";
 import HamburgMenu from "../Navbar/HamburgMenu";
-import { section } from "framer-motion/client";
 
 export default function HomeHero() {
   const ref = useRef();
@@ -46,11 +45,15 @@ export default function HomeHero() {
   // const textY = useTransform(scrollY, [0, 200, 400], [0, 100, 200]);
   // const textX = useTransform(scrollY, [0, 200, 400], [0, 100, 200]);
 
+  function handlePhone() {
+    window.open("tel:9789647910s");
+  }
+
   return (
     <AnimatePresence>
       <motion.div className={classes.heroVideo}>
         <div className={classes.logo}>
-          <img src="logo.png" />
+          <img src="/public/logo.png" />
         </div>
         <div className={classes.navbar}>
           <ul className={classes.navList}>
@@ -68,10 +71,13 @@ export default function HomeHero() {
           </div>
         </div>
         <div className={classes.chatIcons}>
-          <div className={classes.phone}>
+          <div className={classes.phone} onClick={handlePhone}>
             <LocalPhoneIcon sx={{ color: "blue", fontSize: "2.5rem" }} />
           </div>
-          <div className={classes.whatsapp}>
+          <div
+            className={classes.whatsapp}
+            onClick={() => window.open("https://wa.me/8015544800")}
+          >
             <WhatsAppIcon sx={{ color: "green", fontSize: "2.5rem" }} />
           </div>
         </div>

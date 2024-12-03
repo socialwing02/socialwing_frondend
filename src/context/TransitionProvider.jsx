@@ -11,7 +11,6 @@ export default function TransitionProvider({ children }) {
   return (
     <AnimatePresence mode="wait">
       <motion.div key={location.key}>
-        {/* First screen transition */}
         <motion.div
           initial={{ height: "140vh" }}
           animate={{ height: "0vh" }}
@@ -20,11 +19,10 @@ export default function TransitionProvider({ children }) {
           className={classes.navFirstScreen}
         />
 
-        {/* Text and logo animation */}
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
-          exit={{ opacity: 0, display: "none" }}
+          exit={{ opacity: 0 }}
           transition={{
             ease: "easeOut",
             duration: location.pathname === "/" ? 2 : 0.5,
@@ -33,11 +31,11 @@ export default function TransitionProvider({ children }) {
         >
           {location.pathname === "/" && (
             <motion.img
-              src="logo.png"
+              src="/public/logo.png"
               className={classes.homeImg}
               initial={{ opacity: 1 }}
               animate={{ opacity: 0, scale: [1.5, 1] }}
-              exit={{ opacity: 0, position: "relative" }}
+              exit={{ opacity: 0, display: "none" }}
               transition={{
                 ease: "easeOut",
                 duration: 1,
@@ -47,18 +45,16 @@ export default function TransitionProvider({ children }) {
           {path}
         </motion.div>
 
-        {/* Second screen transition */}
         <motion.div
           initial={{ height: "140vh" }}
           animate={{
             height: "0vh",
-            transition: { delay: location.pathname === "/" ? 1 : 0.5 },
+            transition: { delay: location.pathname === "/" ? 1 : 0.4 },
           }}
           className={classes.navSecondScreen}
         />
       </motion.div>
 
-      {/* Render children with animation */}
       {children}
     </AnimatePresence>
   );

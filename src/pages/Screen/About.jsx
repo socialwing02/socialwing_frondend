@@ -20,11 +20,11 @@ export default function About() {
         >
           <h2>About Us</h2>
           <p>
-            Welcome to Social Wing, your trusted partner in digital marketing,
-            SEO, web design, and graphic design solutions. At Social Wing, we
-            empower businesses to thrive in the digital world by creating
-            tailored marketing strategies that drive growth, improve online
-            visibility, and enhance user engagement.
+            Welcome to Social Wing Digital Marketing Agency, where creativity
+            meets strategy to deliver outstanding digital solutions. Founded
+            with a passion for helping businesses thrive in the digital age, we
+            are a team of dedicated experts committed to transforming your
+            online presence into a powerful growth engine
           </p>
         </motion.div>
         <motion.img
@@ -41,19 +41,21 @@ export default function About() {
           <h4>Our Mission</h4>
 
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            voluptatem accusamus neque modi aperiam, recusandae dolorum eum
-            totam voluptate ut, molestiae similique sint illo fuga quia enim
-            animi labore voluptatum.
+            At Social Wing Digital Marketing Agency, our mission is to provide
+            effective, results-oriented digital marketing solutions that help
+            businesses achieve their objectives and enhance their brands. We
+            focus on creating tailored strategies that captivate audiences,
+            increase traffic, and boost conversions.
           </p>
         </div>
         <div className={classes.card}>
           <h4>Our Vission</h4>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            voluptatem accusamus neque modi aperiam, recusandae dolorum eum
-            totam voluptate ut, molestiae similique sint illo fuga quia enim
-            animi labore voluptatum.
+            To be the best digital marketing agency in Tamil Nadu, helping
+            businesses grow online. We create smart, effective solutions that
+            connect brands with their audience. By using creativity and data, we
+            help businesses succeed and reach their goals. Our aim is to support
+            long-term growth for every brand we work with
           </p>
         </div>
       </section>
@@ -76,15 +78,22 @@ export default function About() {
           <h3>Why Social Wing ?</h3>
 
           <p>
-            At Social Wing, we prioritize understanding your business goals and
-            audience. By combining creativity with strategic insights, we
-            deliver results that make an impact. Our commitment to quality,
-            transparency, and customer satisfaction ensures that we are the
-            go-to digital partner for businesses of all sizes. <br />
-            <br /> Let us help you take your brand to new heights. Whether you
-            need to boost your search rankings, create a visually compelling
-            website, or design graphics that resonate with your audience, Social
-            Wing is here to turn your vision into reality.
+            At Social Wing, we don’t just provide services—we build
+            partnerships. Our team takes the time to understand your goals and
+            challenges, tailoring solutions that align with your vision. Whether
+            you need to enhance brand awareness, generate leads, or boost sales,
+            we have the expertise and tools to make it happen. Transparency,
+            collaboration, and measurable outcomes are the cornerstones of our
+            approach <br />
+            <br />
+            Our approach is built on three key principles: transparency,
+            collaboration, and measurable outcomes. From the moment we start
+            working together, you’ll experience a level of openness and
+            communication that keeps you informed every step of the way. We
+            believe in the power of collaboration—working closely with your team
+            to ensure alignment and drive impactful strategies. And, most
+            importantly, we focus on delivering measurable outcomes, so you can
+            track and celebrate the success of our efforts
           </p>
         </motion.div>
       </section>

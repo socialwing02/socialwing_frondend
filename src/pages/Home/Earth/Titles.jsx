@@ -8,17 +8,17 @@ import {
   useTransform,
 } from "framer-motion";
 
-export default function Titles({ data }) {
+export default function Titles({ data, onSelect }) {
   return (
     <div className={classes.titles}>
       {data.map((item, i) => (
-        <Title key={item.title} item={{ ...item, i }} />
+        <Title key={item.title} item={{ ...item, i }} onSelect={onSelect} />
       ))}
     </div>
   );
 }
 
-function Title({ item }) {
+function Title({ item, onSelect }) {
   const { title, i, speed } = item;
 
   const ref = useRef(null);
@@ -32,7 +32,12 @@ function Title({ item }) {
   const clip = useMotionTemplate`inset(0 ${clipTransform}% 0 0)`;
 
   return (
-    <div className={classes.title} ref={ref}>
+    <div
+      className={classes.title}
+      ref={ref}
+      onMouseOver={() => onSelect(i)}
+      onMouseLeave={() => onSelect(null)}
+    >
       <div className={classes.titleWrapper}>
         <motion.p style={{ clipPath: clip }}>{title}</motion.p>
         <p>{title}</p>

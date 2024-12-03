@@ -18,8 +18,8 @@ export default function Home() {
         transition={{ duration: 1 }}
       >
         <HomeHero />
-        <EarthAnimation />
         <TextAnimation />
+        <EarthAnimation />
         <HomeService />
         <ImageSlider animateClassName="enableAnimation" />
         <ImageSlider animateClassName="enableAnimationReverse" />

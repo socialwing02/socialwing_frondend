@@ -3,7 +3,6 @@ export const navLinks = [
   { name: "About", path: "about" },
   { name: "Services", path: "services" },
   { name: "Contact Us", path: "contact" },
-  { name: "Blog", path: "blog" },
 ];
 export const IMAGES = [
   "img/digital.jpg",
@@ -18,26 +17,39 @@ export const portfolioData = [
   {
     id: 1,
     title: "Digital Marketing",
-    desc: "Maximise your site's organic search potential with a data-driven SEO strategy that will deliver a return on investment.",
+    desc1:
+      "At Social Wing Digital Marketing Agency, we specialize in creating innovative strategies that elevate brands in the digital space",
+    desc2:
+      "Our mission is to empower businesses with impactful solutions that connect, engage, and convert audiences worldwide. Offering a wide range of services, including search engine optimization (SEO), social media marketing (SMM), pay-per-click advertising (PPC), content marketing, email marketing, and web design",
     img: "img/digital.jpg",
   },
   {
     id: 2,
     title: "SEO Services",
-    desc: "We’ll offer assistance you improve your point’s natural trade and changes with an continuous SEO procedure.Maximise your site’s organic search potential with a data-driven SEO strategy that will deliver a return on investment.",
+    desc1:
+      "Maximise your site’s organic search potential with a data-driven SEO strategy that will deliver a return on investment.We’ll offer assistance you improve your point’s natural trade and changes with an continuous SEO procedure.",
+    desc2:
+      "The beat- positioning chase comes about ought to be the most appropriate websites for a stoner’s chase inquiry. Your procedure ought to concentrate on pulling in druggies who'll lock in and change over. Not as it were ought to you target the right expressions, your wharf runners require to be acclimatized to the stoner to deliver the highest stoner encounter.",
+
     img: "img/ads.jpg",
     reverse: true,
   },
   {
     id: 3,
-    title: "Web Develpment",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, fugit perferendis? Mollitia, repudiandae necessitatibus sapiente distinctio dolores quos maiores sed suscipit iure aut ab laboriosam laudantium quam asperiores dolorum consequatur?",
+    title: "Web Development",
+    desc1:
+      "At Social Wing Digital Marketing Agency, we offer expert web development services that help businesses establish a strong online presence and deliver exceptional user experiences. Whether you're launching a new website or upgrading an existing one, our team of developers creates websites that are not only visually stunning but also functional, user-friendly, and optimized for performance",
+    desc2:
+      "Our web development services extend beyond just building websites, we provide ongoing support and maintenance to keep your site performing at its best. From regular security updates to functionality improvements, we ensure that your website stays up-to-date and secure.",
     img: "img/web-development.jpg",
   },
   {
     id: 4,
     title: "Logo Design",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, fugit perferendis? Mollitia, repudiandae necessitatibus sapiente distinctio dolores quos maiores sed suscipit iure aut ab laboriosam laudantium quam asperiores dolorum consequatur?",
+    desc1:
+      "At Social Wing Digital Marketing Agency, we understand that a logo is more than just a visual symbol, it’s the face of your brand. Our logo design service focuses on creating unique, memorable logos that reflect your business identity and resonate with your target audience",
+    desc2:
+      "We believe in creating logos that are simple, timeless, and versatile, ensuring they work across all mediums, from your website to marketing materials. Our process is collaborative and detail-oriented, ensuring that the final design captures the essence of your brand while standing out in a competitive market.",
     img: "img/logo-design.jpg",
     reverse: true,
   },
@@ -45,39 +57,32 @@ export const portfolioData = [
 
 export const EarthData = [
   {
-    title: "Ford",
+    title: "Social Wing",
     description:
-      "Working on the Next-Generation HMI Experience without no driving experience.",
+      "Elevate your brand with Social Wing’s innovative solutions.Your digital growth starts here",
     speed: 0.5,
   },
   {
-    title: "UFC",
-    description:
-      "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
+    title: "Seo",
+    description: "Don’t Let Your Competitors Appear Above You In Google!",
     speed: 0.5,
   },
   {
-    title: "Lincoln",
+    title: "Logo",
     description:
-      "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
+      "Your brand deserves a unique logo.We design logos that stand out and shine",
     speed: 0.67,
   },
   {
-    title: "Royal Caribbean",
+    title: "Google Ads",
     description:
-      "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
+      "Maximize your online reach with Google Ads, powered by Social Wing.	Turn clicks into loyal customers	",
     speed: 0.8,
   },
   {
-    title: "Sleepiq",
+    title: "Web Development",
     description:
-      "Designed a 1M+ users product utilizing my best personal experience: sleeping.",
-    speed: 0.8,
-  },
-  {
-    title: "NFL",
-    description:
-      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+      "Your digital presence starts with a great website.Let Social Wing bring your vision to life",
     speed: 0.8,
   },
 ];

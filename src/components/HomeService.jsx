@@ -66,7 +66,7 @@ function Section({ item }) {
         className={classes.portfolioContent}
       >
         <h2>{item.title}</h2>
-        <p ref={imgRef}>{item.desc}</p>
+        <p ref={imgRef}>{item.desc1}</p>
       </motion.div>
 
       {/* <motion.div

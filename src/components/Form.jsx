@@ -56,7 +56,10 @@ export default function Form({ styleBlack }) {
     <form
       onSubmit={handleSubmit}
       className={classes.contactForm}
-      style={{ backgroundColor: styleBlack ? "#292828" : undefined }}
+      style={{
+        backgroundColor: styleBlack ? "#292828" : undefined,
+        // width: styleBlack ? "500px" : null,
+      }}
     >
       <Input
         name="name"
@@ -101,7 +104,7 @@ export default function Form({ styleBlack }) {
           disabled={loading}
           style={{
             backgroundColor: loading ? "gray" : "black",
-            cursor: loading ? "not-allowed" : "default",
+            cursor: loading ? "not-allowed" : "pointer",
           }}
         >
           {loading ? "Submitting..." : "Submit"}

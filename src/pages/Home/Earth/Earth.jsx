@@ -12,7 +12,6 @@ export default function Earth() {
     offset: ["start end", "end start"],
   });
 
-  //   const rotationY = useTransform(scrollYProgress, [0, 1], [0, Math.PI]);
 
   const smoothRotation = useSpring(scrollYProgress, {
     damping: 20,

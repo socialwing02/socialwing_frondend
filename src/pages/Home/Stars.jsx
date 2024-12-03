@@ -9,7 +9,7 @@ import classes from "../../styles/css/home.module.css";
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(4000), { radius: 1.2 })
+    random.inSphere(new Float32Array(60000), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {

@@ -20,16 +20,13 @@ export default function ContactUs() {
             initial="hidden"
             whileInView="show"
           >
-            <h2>Title</h2>
+            <h2>Let&apos;s Connect</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi
-              aliquam animi facere dolor repellendus veniam praesentium suscipit
-              quos, repellat modi nemo aliquid dolores. Deleniti recusandae
-              provident earum ad maiores?
+              At Social Wing Digital Marketing Agency, we believe that strong
+              communication is key to building successful partnerships. Whether
+              you have questions, want to explore our services, or need support,
+              our team is always here to assist you
             </p>
-            <div>
-              <h2>Contact</h2>
-            </div>
           </motion.div>
 
           <motion.div

@@ -64,7 +64,7 @@ export default function Services() {
 }
 
 function Section({ item }) {
-  const { title, desc, img, reverse } = item;
+  const { title, desc1, desc2, img, reverse } = item;
 
   const ref = useRef();
 
@@ -91,7 +91,9 @@ function Section({ item }) {
         whileInView="show"
       >
         <h1>{title}</h1>
-        <p>{desc}</p>
+        <p>{desc1}</p>
+        <br />
+        <p>{desc2}</p>
       </motion.div>
 
       <div className={classes.serviceSectionImage}>

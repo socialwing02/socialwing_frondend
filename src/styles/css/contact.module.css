@@ -9,18 +9,25 @@
   display: flex;
   gap: 4rem;
 }
+
+.content h2 {
+  font-size: clamp(2rem, 2.3vw, 4rem);
+}
 .content p {
-  width: min(90vw, 50ch);
+  width: min(90vw, 45ch);
+  font-size: clamp(1rem, 1.3vw, 3rem);
+  padding-block: 1rem;
 }
 .contactForm {
-  max-width: 400px;
+  width: 400px;
   padding-inline: 2rem;
   padding-block: 3rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1rem;
   border-radius: 9px;
-  align-self: flex-start;
+  /* align-items: center; */
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: #fff;
 }
@@ -34,8 +41,8 @@
   outline: none;
   border: none;
   font-size: 1rem;
-  cursor: pointer;
 }
+
 .submitButton {
   display: flex;
   justify-content: flex-end;

@@ -5,9 +5,9 @@ export default function TextAnimation() {
     <div className={classes.scrollReveal}>
       <h1>
         <span>
-          Accelerate Your Business Growth with Expert Digital Marketing
-          Solutions Accelerate Your Business Growth with Expert Digital
-          Marketing Solutions
+          We are a digital marketing agency focused on brand growth. We create
+          plans that bring lasting success. Together, we&apos;sll take your
+          business to the next level
         </span>
       </h1>
     </div>

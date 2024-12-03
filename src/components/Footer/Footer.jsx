@@ -37,9 +37,6 @@ export default function Footer() {
 
             <LinkedInIcon fontSize="large" sx={{ color: "gray" }} />
           </div>
-          <div>
-            <h2 style={{ paddingTop: "2rem" }}>Contact</h2>
-          </div>
         </div>
       </div>
       {/* &copy; */}
