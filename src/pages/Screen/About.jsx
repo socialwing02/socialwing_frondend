@@ -2,6 +2,7 @@ import React from "react";
 import classes from "../../styles/css/about.module.css";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/variant";
+import aboutus from "../../assets/img/banner.png";
 
 export default function About() {
   return (
@@ -28,7 +29,7 @@ export default function About() {
           </p>
         </motion.div>
         <motion.img
-          src="img/banner.png"
+          src={aboutus}
           alt=""
           variants={fadeIn("left", 0.7)}
           initial="hidden"
@@ -62,7 +63,7 @@ export default function About() {
 
       <section className={classes.whyContainer}>
         <motion.img
-          src="img/banner.png"
+          src={aboutus}
           alt=""
           variants={fadeIn("right", 0.3)}
           initial="hidden"

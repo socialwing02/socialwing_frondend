@@ -3,6 +3,8 @@ import Input from "./Input";
 import { fetchApi } from "../service/fetch";
 import classes from "../styles/css/contact.module.css";
 import Toastify from "../components/Toastify.jsx";
+import connect from "../assets/img/let-connect1.png";
+import code from "../assets/img/let-connect.png";
 
 export default function Form({ styleBlack }) {
   const [error, setError] = useState(null);
@@ -61,8 +63,8 @@ export default function Form({ styleBlack }) {
     >
       {styleBlack && (
         <div className={classes.homeContactImgs}>
-          <img src="img/let-connect1.PNG" alt="" />
-          <img src="img/let-connect.PNG" alt="" />
+          <img src={connect} alt="" />
+          <img src={code} alt="" />
         </div>
       )}
 

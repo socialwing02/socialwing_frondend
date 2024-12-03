@@ -3,6 +3,9 @@ import { useScroll, useSpring, useTransform } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import React, { useRef } from "react";
 import { TextureLoader } from "three";
+import color1 from "../../../assets/earth/color.jpg";
+import normal1 from "../../../assets/earth/normal.png";
+import occlusion from "../../../assets/earth/occlusion.jpg";
 
 export default function Earth() {
   const ref = useRef();
@@ -12,15 +15,14 @@ export default function Earth() {
     offset: ["start end", "end start"],
   });
 
-
   const smoothRotation = useSpring(scrollYProgress, {
     damping: 20,
   });
 
   const [color, normal, aoMap] = useLoader(TextureLoader, [
-    "earth/color.jpg",
-    "earth/normal.png",
-    "earth/occlusion.jpg",
+    color1,
+    normal1,
+    occlusion,
   ]);
 
   return (

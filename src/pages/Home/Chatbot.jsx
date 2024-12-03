@@ -5,6 +5,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { fetchApi } from "../../service/fetch";
 import Toastify from "../../components/Toastify";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+import botImg from "../../assets/img/S00.png";
 
 export function Chatbot({ onOpen }) {
   const [userInput, setUserInput] = useState("");
@@ -105,7 +106,7 @@ export default function ChatbotContainer() {
         onMouseLeave={handleMouseLeave}
         style={{ backgroundColor: isMouseEnter ? "white" : "transparent" }}
       >
-        <img src="img/S00.png" alt="" />
+        <img src={botImg} alt="" />
 
         {isMouseEnter && (
           <>

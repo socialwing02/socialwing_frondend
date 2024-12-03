@@ -5,6 +5,11 @@ export const navLinks = [
   { name: "Contact Us", path: "contact" },
 ];
 
+import digital from "../assets/img/digital.jpg";
+import ads from "../assets/img/ads.jpg";
+import web from "../assets/img/web-development.jpg";
+import logo from "../assets/img/logo-design.jpg";
+
 export const portfolioData = [
   {
     id: 1,
@@ -13,7 +18,7 @@ export const portfolioData = [
       "At Social Wing Digital Marketing Agency, we specialize in creating innovative strategies that elevate brands in the digital space",
     desc2:
       "Our mission is to empower businesses with impactful solutions that connect, engage, and convert audiences worldwide. Offering a wide range of services, including search engine optimization (SEO), social media marketing (SMM), pay-per-click advertising (PPC), content marketing, email marketing, and web design",
-    img: "img/digital.jpg",
+    img: digital,
   },
   {
     id: 2,
@@ -23,7 +28,7 @@ export const portfolioData = [
     desc2:
       "The beat- positioning chase comes about ought to be the most appropriate websites for a stoner’s chase inquiry. Your procedure ought to concentrate on pulling in druggies who'll lock in and change over. Not as it were ought to you target the right expressions, your wharf runners require to be acclimatized to the stoner to deliver the highest stoner encounter.",
 
-    img: "img/ads.jpg",
+    img: ads,
     reverse: true,
   },
   {
@@ -33,7 +38,7 @@ export const portfolioData = [
       "At Social Wing Digital Marketing Agency, we offer expert web development services that help businesses establish a strong online presence and deliver exceptional user experiences. Whether you're launching a new website or upgrading an existing one, our team of developers creates websites that are not only visually stunning but also functional, user-friendly, and optimized for performance",
     desc2:
       "Our web development services extend beyond just building websites, we provide ongoing support and maintenance to keep your site performing at its best. From regular security updates to functionality improvements, we ensure that your website stays up-to-date and secure.",
-    img: "img/web-development.jpg",
+    img: web,
   },
   {
     id: 4,
@@ -42,7 +47,7 @@ export const portfolioData = [
       "At Social Wing Digital Marketing Agency, we understand that a logo is more than just a visual symbol, it’s the face of your brand. Our logo design service focuses on creating unique, memorable logos that reflect your business identity and resonate with your target audience",
     desc2:
       "We believe in creating logos that are simple, timeless, and versatile, ensuring they work across all mediums, from your website to marketing materials. Our process is collaborative and detail-oriented, ensuring that the final design captures the essence of your brand while standing out in a competitive market.",
-    img: "img/logo-design.jpg",
+    img: logo,
     reverse: true,
   },
 ];
