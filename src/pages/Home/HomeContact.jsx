@@ -6,13 +6,8 @@ import Form from "../../components/Form";
 
 export default function HomeContact() {
   return (
-    <>
-      <img
-        src="img/let-connect1.PNG"
-        alt=""
-        className={classes.homeContactImg}
-      />
-      <section style={{ backgroundColor: "#000" }}>
+    <section className={classes.homeContactContainer}>
+      <div style={{ backgroundColor: "#000" }}>
         <div className={classes.homeContact}>
           <motion.div
             className={classes.homeFormSection}
@@ -23,7 +18,7 @@ export default function HomeContact() {
             <Form styleBlack={true} />
           </motion.div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

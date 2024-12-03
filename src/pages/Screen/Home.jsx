@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
+import { LOGO_IMAGES, POSTER_IMAGE } from "../../data/index";
 
 const HomeHero = lazy(() => import("../Home/HomeHero"));
 const EarthAnimation = lazy(() => import("../Home/Earth/EarthAnimation"));
@@ -21,8 +22,16 @@ export default function Home() {
         <TextAnimation />
         <EarthAnimation />
         <HomeService />
-        <ImageSlider animateClassName="enableAnimation" />
-        <ImageSlider animateClassName="enableAnimationReverse" />
+        <div style={{ minHeight: "100vh" }}>
+          <ImageSlider
+            animateClassName="enableAnimation"
+            images={LOGO_IMAGES}
+          />
+          <ImageSlider
+            animateClassName="enableAnimationReverse"
+            images={POSTER_IMAGE}
+          />
+        </div>
         <HomeContact />
       </motion.main>
     </Suspense>

@@ -4,14 +4,6 @@ export const navLinks = [
   { name: "Services", path: "services" },
   { name: "Contact Us", path: "contact" },
 ];
-export const IMAGES = [
-  "img/digital.jpg",
-  "img/ads.jpg",
-  "img/web-development.jpg",
-  "img/logo-design.jpg",
-  "img/banner.png",
-  "img/digital.jpg",
-];
 
 export const portfolioData = [
   {
@@ -86,3 +78,17 @@ export const EarthData = [
     speed: 0.8,
   },
 ];
+
+import consultant from "../assets/sliderImage/consultant.jpg";
+import pickntree from "../assets/sliderImage/pickntree.jpg";
+import property from "../assets/sliderImage/property.png";
+import srivi from "../assets/sliderImage/srivi.png";
+import pitshop from "../assets/sliderImage/pitshop.jpg";
+
+export const LOGO_IMAGES = [consultant, pickntree, property, srivi, pitshop];
+
+import cake from "../assets/poster/cake.jpg";
+import door from "../assets/poster/door.jpg";
+import tshirt from "../assets/poster/tshirt.jpg";
+
+export const POSTER_IMAGE = [cake, door, tshirt, consultant, pickntree];

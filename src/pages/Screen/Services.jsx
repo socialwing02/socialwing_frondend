@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import classes from "../../styles/css/service.module.css";
-import { IMAGES, portfolioData } from "../../data";
+import { portfolioData } from "../../data";
 import { fadeIn } from "../../utils/variant";
 
 export default function Services() {
@@ -31,7 +31,7 @@ export default function Services() {
           <Section item={item} />
         ))}
 
-        <motion.div
+        {/* <motion.div
           className={classes.serviceAnimate}
           ref={ref}
           style={{ opacity }}
@@ -57,7 +57,7 @@ export default function Services() {
             className={classes.boy}
             style={{ marginTop: "-5rem" }}
           />
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );

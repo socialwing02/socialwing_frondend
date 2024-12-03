@@ -24,7 +24,7 @@ export default function Form({ styleBlack }) {
 
     setLoading(true);
 
-    const url = "http://54.253.231.194:5000/api/send_email";
+    const url = "http://13.55.164.165:8000/api/send_email";
 
     try {
       const response = await fetchApi(url, data);
@@ -53,63 +53,70 @@ export default function Form({ styleBlack }) {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
+    <div
       className={classes.contactForm}
       style={{
         backgroundColor: styleBlack ? "#292828" : undefined,
-        // width: styleBlack ? "500px" : null,
       }}
     >
-      <Input
-        name="name"
-        label="Name"
-        placeholder="Enter your name"
-        type="text"
-        required={true}
-        styleBlack={styleBlack}
-      />
-      <div>
+      {styleBlack && (
+        <div className={classes.homeContactImgs}>
+          <img src="img/let-connect1.PNG" alt="" />
+          <img src="img/let-connect.PNG" alt="" />
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit}>
         <Input
-          label="Contact No"
-          placeholder="Enter your Number"
-          type="number"
-          name="phone"
+          name="name"
+          label="Name"
+          placeholder="Enter your name"
+          type="text"
           required={true}
-          onChange={handleChange}
           styleBlack={styleBlack}
         />
-        <p style={{ color: "red", fontSize: "15px" }}>{error}</p>
-      </div>
-      <Input
-        label="Business Name"
-        placeholder="Enter your Business"
-        type="text"
-        name="name_of_business"
-        required={false}
-        styleBlack={styleBlack}
-      />
-      <Input
-        label="Email"
-        placeholder="Enter your Email"
-        type="email"
-        name="email"
-        required={true}
-        styleBlack={styleBlack}
-      />
+        <div>
+          <Input
+            label="Contact No"
+            placeholder="Enter your Number"
+            type="number"
+            name="phone"
+            required={true}
+            onChange={handleChange}
+            styleBlack={styleBlack}
+          />
+          <p style={{ color: "red", fontSize: "15px" }}>{error}</p>
+        </div>
+        <Input
+          label="Business Name"
+          placeholder="Enter your Business"
+          type="text"
+          name="name_of_business"
+          required={false}
+          styleBlack={styleBlack}
+        />
+        <Input
+          label="Email"
+          placeholder="Enter your Email"
+          type="email"
+          name="email"
+          required={true}
+          styleBlack={styleBlack}
+        />
 
-      <div className={classes.submitButton}>
-        <button
-          type="submit"
-          disabled={loading}
-          style={{
-            backgroundColor: loading ? "gray" : "black",
-            cursor: loading ? "not-allowed" : "pointer",
-          }}
-        >
-          {loading ? "Submitting..." : "Submit"}
-        </button>
-      </div>
-    </form>
+        <div className={classes.submitButton}>
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              backgroundColor: loading ? "gray" : "black",
+              cursor: loading ? "not-allowed" : "pointer",
+            }}
+          >
+            {loading ? "Submitting..." : "Submit"}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

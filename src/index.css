@@ -8,9 +8,6 @@
   font-weight: 400;
   font-style: normal;
 }
-body {
-  /* cursor: url("/mask-small.svg"), auto; */
-}
 
 img,
 video {
@@ -72,6 +69,7 @@ video {
 .inputContainer {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 }
 .inputContainer input {
   width: 300px;

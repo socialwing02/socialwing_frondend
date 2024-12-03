@@ -32,7 +32,7 @@ export function Chatbot({ onOpen }) {
 
     setInput((prev) => [...prev, { type: "customer", text: userInput }]);
 
-    const url = "http://54.253.231.194:5000/bot";
+    const url = "http://13.55.164.165:8000/api/bot";
 
     const data = {
       message: userInput,
